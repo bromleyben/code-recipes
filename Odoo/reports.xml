@@ -1,0 +1,39 @@
+<!-- See 'paperformats.xml' for borderless paperformat -->
+<report
+        id="quote_cover"
+        model="sale.order"
+        string="Quote Cover"
+        report_type="qweb-pdf"
+        name="$module.quote_cover_page$"
+        file="$module.quote_cover_page$"
+        paperformat="$module.borderless_paper_format$"
+    />
+
+<!-- Cover Page Report (V12+) -->
+<template id="=cover_page">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+            <div id="cover-page"
+                    class="article"
+                    t-att-data-oe-model="o and o._name"
+                    t-att-data-oe-id="o and o.id">
+
+                <!-- Contents Here -->
+
+            </div>
+        </t>
+    </t>
+</template>
+
+<!-- Required Styles -->
+<styles>
+#cover-page {
+    background-image: url("...");
+
+    height: 930px;  // This would be for A4 landscape
+
+    background-size: cover;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+</styles>
