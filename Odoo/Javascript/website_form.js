@@ -5,7 +5,7 @@ odoo.define('module.name', function (require) {
     const WebsiteForm = require('website_form.animation'),  // Require this to ensure correct load order
           snippet_animation = require('web_editor.snippets.animation');
 
-    // Adding a spinner on submit and removing when errors occur
+    // 1 - Adding a spinner on submit and removing when errors occur
     {
     snippet_animation.registry.form_builder_send.include({
 
